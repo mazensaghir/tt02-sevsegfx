@@ -1,6 +1,8 @@
-module cw8_pattern (i_count, o_segment);
-  input     [2:0] i_count;
-  output    [6:0] o_segment;
+module cw8_pattern 
+  (
+    input [2:0] i_count, 
+    output [6:0] o_segment
+  );
 
   always@(i_count) begin
     case(i_count)

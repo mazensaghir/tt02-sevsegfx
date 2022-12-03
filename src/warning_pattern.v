@@ -1,6 +1,8 @@
-module warning_pattern (i_count, o_segment);
-  input     i_count;
-  output    [6:0] o_segment;
+module warning_pattern 
+  (
+    input   i_count, 
+    output  [6:0] o_segment
+  );
 
   always@(i_count) begin
     case(i_count)
