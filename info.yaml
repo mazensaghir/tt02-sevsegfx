@@ -4,11 +4,23 @@ project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
   source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
     - mod8_counter.v
-    - rand_pattern.v
-    - mux4.v
-    - scan_pattern.v
+    - cw0_pattern.v
+    - ccw0_pattern.v
     - cw8_pattern.v
-    - warning_pattern.v
+    - ccw8_pattern.v
+    - snake_cw_pattern.v
+    - snake_ccw_pattern.v
+    - vscan_pattern.v
+    - hscan_pattern.v
+    - warn1_pattern.v
+    - warn2_pattern.v
+    - warn3_pattern.v
+    - warn4_pattern.v
+    - warn5_pattern.v
+    - warn6_pattern.v
+    - xscan_pattern.v
+    - rand_pattern.v
+    - mux16.v
     - msaghir_top_level.v
   top_module:  "msaghir_top_level"      # put the name of your top module here, make it unique by prepending your github username
 
@@ -23,8 +35,8 @@ documentation:
   discord:      "msaghir#7355"      # Your discord handle - make sure to include the # part as well
   title:        "SevSegFX"      # Project title
   description:  "Seven segment display effect generator"      # Short description of what your project does
-  how_it_works: "Generates four different effects on the seven segment display: random pattern, clockwise figure 8, scan pattern, and warning pattern"      # Longer description of how the project works
-  how_to_test:  "Use inputs [3:2] to cycle through the different patterns."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_it_works: "Generates 16 dynamic patterns on the seven segment display."      # Longer description of how the project works
+  how_to_test:  "Use inputs [5:2] to cycle through the different patterns."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   external_hw:  ""      # Describe any external hardware needed
   language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
@@ -35,8 +47,8 @@ documentation:
     - reset
     - sel0
     - sel1
-    - none
-    - none
+    - sel2
+    - sel3
     - none
     - none
   outputs:
