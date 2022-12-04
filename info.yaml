@@ -20,6 +20,9 @@ project:
     - warn6_pattern.v
     - xscan_pattern.v
     - rand_pattern.v
+    - fx_gen.v
+    - digit_gen.v
+    - mux2.v
     - mux16.v
     - msaghir_top_level.v
   top_module:  "msaghir_top_level"      # put the name of your top module here, make it unique by prepending your github username
@@ -31,12 +34,12 @@ project:
 #
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
-  author:       "Mazen A. R. Saghir"      # Your name
+  author:       "Mazen Saghir, ECE Department, American University of Beirut (mazen@aub.edu.lb)"      # Your name
   discord:      "msaghir#7355"      # Your discord handle - make sure to include the # part as well
   title:        "SevSegFX"      # Project title
   description:  "Seven segment display effect generator"      # Short description of what your project does
-  how_it_works: "Generates 16 dynamic patterns on the seven segment display."      # Longer description of how the project works
-  how_to_test:  "Use inputs [5:2] to cycle through the different patterns."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_it_works: "Generates hexadecimal digits and 16 dynamic patterns on the seven segment display."      # Longer description of how the project works
+  how_to_test:  "Use input[7] to display digits (=0) or effects (=1). Use input[6] to blink displayed digits (=1) or not (=0). Only digits can be blinked. Use inputs [5:2] to select digit or effect pattern to display."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   external_hw:  ""      # Describe any external hardware needed
   language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
@@ -45,12 +48,12 @@ documentation:
   inputs:               # a description of what the inputs do
     - clock
     - reset
-    - sel0
-    - sel1
-    - sel2
-    - sel3
-    - none
-    - none
+    - sel0/d0
+    - sel1/d1
+    - sel2/d2
+    - sel3/d2
+    - blink
+    - fx
   outputs:
     - segment a         # a description of what the outputs do
     - segment b
